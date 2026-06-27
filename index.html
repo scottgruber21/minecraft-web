@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#1f2937" />
+    <title>Minecraft Places</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="card hero-card">
+        <h1>Minecraft Places</h1>
+        <p>Track the places you have visited in Minecraft, including coordinates, notes, and site type.</p>
+      </section>
+
+      <section class="card form-card">
+        <h2>Add a place</h2>
+        <form id="place-form">
+          <label>
+            Name
+            <input id="name" name="name" type="text" placeholder="The Overworld Base" required />
+          </label>
+
+          <label>
+            Coordinates
+            <input id="coordinates" name="coordinates" type="text" placeholder="120, 64, -340" required />
+          </label>
+
+          <label>
+            Notes
+            <textarea id="notes" name="notes" rows="4" placeholder="Describe what you found or why it mattered"></textarea>
+          </label>
+
+          <label>
+            Type
+            <select id="type" name="type">
+              <option value="House">House</option>
+              <option value="Village">Village</option>
+              <option value="Cave">Cave</option>
+              <option value="Portal">Portal</option>
+              <option value="Misc">Misc</option>
+            </select>
+          </label>
+
+          <button type="submit">Save place</button>
+        </form>
+      </section>
+
+      <section class="card list-card">
+        <div class="list-header">
+          <h2>Saved places</h2>
+          <button id="clear-all" class="secondary">Clear all</button>
+        </div>
+        <div id="empty-state" class="empty-state">No places saved yet. Add your first Minecraft location.</div>
+        <ul id="place-list" class="place-list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
