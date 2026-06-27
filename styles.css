@@ -57,6 +57,12 @@ label {
   color: #f8fafc;
 }
 
+.coordinate-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 input,
 textarea,
 select,
@@ -94,9 +100,26 @@ button.secondary {
   margin-bottom: 12px;
 }
 
-.empty-state {
+.empty-state,
+.search-results {
   color: #94a3b8;
   padding: 12px 0;
+}
+
+.search-results ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-results li {
+  background: #111827;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 12px;
+  padding: 10px;
 }
 
 .place-list {
@@ -146,6 +169,12 @@ button.secondary {
   margin-top: 8px;
   background: #ef4444;
   color: white;
+}
+
+@media (max-width: 600px) {
+  .coordinate-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 700px) {

@@ -11,7 +11,7 @@
     <main class="app-shell">
       <section class="card hero-card">
         <h1>Minecraft Places</h1>
-        <p>Track the places you have visited in Minecraft, including coordinates, notes, and site type.</p>
+        <p>Track the places you have visited in Minecraft, including coordinate details, notes, and site type.</p>
       </section>
 
       <section class="card form-card">
@@ -22,10 +22,21 @@
             <input id="name" name="name" type="text" placeholder="The Overworld Base" required />
           </label>
 
-          <label>
-            Coordinates
-            <input id="coordinates" name="coordinates" type="text" placeholder="120, 64, -340" required />
-          </label>
+          <div class="coordinate-grid">
+            <label>
+              X
+              <input id="x" name="x" type="number" step="any" placeholder="120" required />
+            </label>
+                        <label>
+              Z
+              <input id="z" name="z" type="number" step="any" placeholder="-340" required />
+            </label>
+            <label>
+              Y
+              <input id="y" name="y" type="number" step="any" placeholder="64" required />
+            </label>
+
+          </div>
 
           <label>
             Notes
@@ -45,6 +56,26 @@
 
           <button type="submit">Save place</button>
         </form>
+      </section>
+
+      <section class="card search-card">
+        <h2>Find nearby places</h2>
+        <div class="coordinate-grid">
+          <label>
+            Current X
+            <input id="search-x" name="search-x" type="number" step="any" placeholder="0" />
+          </label>
+                    <label>
+            Current Z
+            <input id="search-z" name="search-z" type="number" step="any" placeholder="0" />
+          </label>
+          <label>
+            Current Y
+            <input id="search-y" name="search-y" type="number" step="any" placeholder="64" />
+          </label>
+        </div>
+        <button id="search-btn" class="secondary" type="button">Find nearby</button>
+        <div id="search-results" class="search-results"></div>
       </section>
 
       <section class="card list-card">
